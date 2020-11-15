@@ -7,13 +7,13 @@ import processing.core.PGraphics
 class GameOverState extends GameState {
 
   var runtime: Long = 0
-  val timeShown = 4000
+  val waitTime = 4000
 
   override def draw(gameModel: GameModel, graphics: PGraphics, timeSinceLastDraw: Float, keySet: Set[Char]): GameState = {
     drawScore(gameModel, graphics)
     if (runtime == 0) {
       runtime = System.currentTimeMillis()
-    } else if (runtime + timeShown < System.currentTimeMillis()) {
+    } else if (runtime + waitTime < System.currentTimeMillis()) {
       CustomGameFramework.setupGameModel()
       return new PlayingState
     }

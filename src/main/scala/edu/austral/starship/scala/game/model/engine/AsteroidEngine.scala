@@ -46,25 +46,21 @@ object AsteroidEngine extends Engine[Asteroid] {
     }
   }
 
-  //0 is top border and iterates clockwise
   private def buildAsteroid(maxX: Int, maxY: Int): Asteroid = {
   size =  if(Random.randomInt(2) == 1) 50 else 25
     Random.randomInt(3) match {
-      //top side
       case 0 =>
         Asteroid(
           Vector2(Random.randomInt(maxX), 0 + 1),
           Vector2.fromModule(3, Math.toRadians(Random.randomInt(90) + 45).toFloat),
           size
         )
-      //right side
       case 1 =>
         Asteroid(
           Vector2(maxX - 1, Random.randomInt(maxY)),
           Vector2.fromModule(3, Math.toRadians(Random.randomInt(90) + 135).toFloat),
           size
         )
-      //left side
       case 2 =>
         Asteroid(
           Vector2(0 + 1, Random.randomInt(maxY)),
