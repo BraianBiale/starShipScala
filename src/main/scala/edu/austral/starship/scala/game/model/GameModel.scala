@@ -4,6 +4,7 @@ import edu.austral.starship.scala.game.model.engine.{AsteroidEngine, BulletEngin
 import edu.austral.starship.scala.base.vector.Vector2
 import edu.austral.starship.scala.game.model.helpers.{LivesHelper, ScoreHelper}
 import edu.austral.starship.scala.game.model.sprites.Starship
+import edu.austral.starship.scala.game.view.GameView
 
 class GameModel {
 
@@ -21,6 +22,8 @@ class GameModel {
   var players: List[Player] = List()
 
   var maxLives: Int = 0
+
+  var gameView: GameView = new GameView
 
 
   def stepCycle(timeSinceLastDraw: Float, keysDown: Set[Char]): Unit = {
