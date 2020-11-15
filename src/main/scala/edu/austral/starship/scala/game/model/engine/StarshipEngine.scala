@@ -37,7 +37,6 @@ object StarshipEngine extends Engine[Starship] {
       LivesHelper.onLifeLost(starship.player.name)
 
       if (starship.maxLives == 1) {
-        ScoreHelper.resetScoreOfPlayer(starship.player.name)
         None
       } else {
         Some(starship.copy(

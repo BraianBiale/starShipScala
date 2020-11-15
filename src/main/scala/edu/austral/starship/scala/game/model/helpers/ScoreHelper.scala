@@ -34,7 +34,7 @@ object ScoreHelper {
     scores = scores.updated(name, 0)
   }
 
-  def getAll: List[String] = {
+  def getAllScores: List[String] = {
     scores.toList.map { case (name: String, value: Int) => name + ": " + value }
   }
 }

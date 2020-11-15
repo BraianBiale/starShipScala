@@ -1,7 +1,7 @@
 maxX = 1500
 maxY = 1000
-maxLives = 2
-players = 2
+maxLives = 1
+players = 1
 
 playerName1 = ElBrayan
 upControl1 = w

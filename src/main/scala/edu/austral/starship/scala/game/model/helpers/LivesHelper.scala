@@ -13,7 +13,7 @@ object LivesHelper {
   }
 
   def getAll: List[String] = {
-    playersLivesCounter.toList.map { case (name: String, value: Int) => name + ": " + value + "♥" }
+    playersLivesCounter.toList.map { case (name: String, value: Int) => name + " lives: " + value }
   }
 
 }

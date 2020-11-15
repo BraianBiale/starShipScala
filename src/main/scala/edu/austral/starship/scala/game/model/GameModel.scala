@@ -5,7 +5,7 @@ import edu.austral.starship.scala.base.vector.Vector2
 import edu.austral.starship.scala.game.model.helpers.{LivesHelper, ScoreHelper}
 import edu.austral.starship.scala.game.model.sprites.Starship
 
-class GameModel() extends AbstractModel {
+class GameModel {
 
 
   var maxX = 0
@@ -23,7 +23,7 @@ class GameModel() extends AbstractModel {
   var maxLives: Int = 0
 
 
-  override def stepCycle(timeSinceLastDraw: Float, keysDown: Set[Char]): Unit = {
+  def stepCycle(timeSinceLastDraw: Float, keysDown: Set[Char]): Unit = {
 
     sprites = GameSprites(
       StarshipEngine.stepCycle(sprites, timeSinceLastDraw, keysDown, maxX, maxY),
@@ -34,14 +34,14 @@ class GameModel() extends AbstractModel {
 
   }
 
-  override def getPositionable: List[Positionable] = {
+  def getPositionables: List[Positionable] = {
     if (sprites.starships.isEmpty) {
       setup(players, maxX, maxY, maxLives)
     }
     sprites.starships ::: sprites.asteroids ::: sprites.bullets ::: sprites.guns
   }
 
-  override def setup(players: List[Player], maxX: Int, maxY: Int, maxLives: Int): Unit = {
+  def setup(players: List[Player], maxX: Int, maxY: Int, maxLives: Int): Unit = {
     this.maxLives = maxLives
     this.players = players
     this.maxX = maxX
@@ -58,4 +58,7 @@ class GameModel() extends AbstractModel {
 
   }
 
+  def getGameSprites: GameSprites = sprites
+
+  def resetGameSprites: Unit = sprites = GameSprites(List(), List(), List(), List())
 }
