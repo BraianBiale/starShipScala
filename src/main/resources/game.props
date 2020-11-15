@@ -1,0 +1,20 @@
+maxX = 1500
+maxY = 1000
+maxLives = 2
+players = 2
+
+playerName1 = ElBrayan
+upControl1 = w
+downControl1 = s
+leftControl1 = a
+rightControl1 = d
+shootControl1 = q
+changeGun1 = e
+
+playerName2 = Otro
+upControl2 = i
+downControl2 = k
+leftControl2 = j
+rightControl2 = l
+shootControl2 = u
+changeGun2 = p
