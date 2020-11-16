@@ -10,16 +10,16 @@ object BulletEngine extends Engine [Bullet]{
     gameSprites.bullets.flatMap(bullet => stepCycle(bullet, maxX, maxY)) ::: newBullets(gameSprites, keysDown)
   }
 
-  private def mainGunLogic(gameSprites: GameSprites, starship: Starship): Boolean = !gameSprites.bullets.exists(bullet => bullet.starship.player.equals(starship.player))
+  private def notExistsMainGunBullet(gameSprites: GameSprites, starship: Starship): Boolean = !gameSprites.bullets.exists(bullet => bullet.starship.player.equals(starship.player))
 
-  private def altGunLogic(gameSprites: GameSprites, starship: Starship): Boolean = !gameSprites
+  private def notExistsAltGunBullet(gameSprites: GameSprites, starship: Starship): Boolean = !gameSprites
     .bullets
     .exists(bullet => bullet.starship.player.equals(starship.player) && (System.currentTimeMillis() - bullet.time) < 300)
 
   private def newBullets(gameSprites: GameSprites, keysDown: Set[Char]): List[Bullet] = {
     gameSprites.starships.flatMap(starship => {
       if (keysDown.contains(starship.player.keysConfig.shoot) &&
-        (starship.mainGun && mainGunLogic(gameSprites, starship) || (!starship.mainGun && altGunLogic(gameSprites, starship)))
+        (starship.mainGun && notExistsMainGunBullet(gameSprites, starship) || (!starship.mainGun && notExistsAltGunBullet(gameSprites, starship)))
       ) {
         Some(newBullet(starship))
       } else None

@@ -15,7 +15,7 @@ object ShapeManager {
       "SMALL_ASTEROID" -> resize(imageLoader.load("img/asteroid1.png"), 50, 50),
       "BIG_ASTEROID" -> resize(imageLoader.load("img/asteroid1.png"), 100, 100),
       "BULLET" -> resize(imageLoader.load("img/bullet2.png"), 400, 400),
-      "GUN1" -> imageLoader.load("img/gun2.png"),
+      "GUN1" -> imageLoader.load("img/gun1.png"),
       "GUN2" -> imageLoader.load("img/gun2.png")
       )
     )
