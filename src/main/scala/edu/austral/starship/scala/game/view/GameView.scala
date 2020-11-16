@@ -31,7 +31,7 @@ class GameView {
         {
           case (player: String, index: Int) => {
             graphics.textSize(15)
-            graphics.text(player, 300, 100 + index * 12)
+            graphics.text(player, 300, 100 + index * 20)
           }
         })
   }
@@ -44,7 +44,7 @@ class GameView {
         {
           case (player: String, index: Int) => {
             graphics.textSize(15)
-            graphics.text(player, 100, 100 + index * 12)
+            graphics.text(player, 100, 100 + index * 20)
           }
         })
   }
@@ -55,7 +55,7 @@ class GameView {
     ScoreHelper.getAllScores.zipWithIndex.foreach {
       case (score: String, index: Int) => {
         graphics.textSize(20)
-        graphics.text(score, (gameModel.maxX / 2) - 10, gameModel.maxY / 2 + index * 12)
+        graphics.text(score, (gameModel.maxX / 2) - 10, gameModel.maxY / 2 + index * 25)
       }
     }
   }
