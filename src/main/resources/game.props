@@ -1,9 +1,9 @@
 maxX = 1500
 maxY = 1000
-maxLives = 1
-players = 1
+maxLives = 2
+players = 2
 
-playerName1 = ElBrayan
+playerName1 = Braian
 upControl1 = w
 downControl1 = s
 leftControl1 = a
@@ -11,7 +11,7 @@ rightControl1 = d
 shootControl1 = q
 changeGun1 = e
 
-playerName2 = Otro
+playerName2 = Pepe
 upControl2 = i
 downControl2 = k
 leftControl2 = j
