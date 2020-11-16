@@ -8,7 +8,7 @@ import edu.austral.starship.scala.game.model.Player
 import edu.austral.starship.scala.game.view.ImageVisitor
 import processing.core.PImage
 
-case class Starship(position: Vector2, speed: Vector2, player: Player, maxLives: Int,lastGunChanged: Long = 0, mainGun: Boolean = true, lastDied: Long = 0, gunNumber: Int = 1, collisionableRadious: Int = 40) extends Sprite {
+case class Starship(position: Vector2, speed: Vector2, player: Player, maxLives: Int,lastGunChanged: Long = 0, mainGun: Boolean = true, lastDied: Long = 0, collisionableRadious: Int = 40) extends Sprite {
 
   override def getSpeed: Vector2 = speed
 
